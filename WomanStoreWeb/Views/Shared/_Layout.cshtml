@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Woman Store</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        /* Custom Styles */
+        .navbar-nav .nav-link {
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+            .navbar-nav .nav-link:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: #f8f9fa;
+                border-radius: 5px;
+            }
+
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+            footer a {
+                color: #f8f9fa;
+                margin: 0 10px;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                footer a:hover {
+                    color: #ffc107;
+                }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <div class="container">
+            @Html.ActionLink("Woman Store", "Index", "Home", null, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Customer", "Index", "Customers", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Category", "Index", "Categories", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("SubCategory", "Index", "SubCategories", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("ProductType", "Index", "ProductTypes", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Product", "Index", "Products", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Colors", "Index", "Colors", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Size", "Index", "Sizes", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Material", "Index", "Materials", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Shipping", "Index", "ShippingMethods", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Sale", "Index", "Sales", null, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+
+    <!-- Scripts -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
